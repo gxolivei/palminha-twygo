@@ -53,12 +53,12 @@
 
 .result-modal-text {
   color: rgb(7, 6, 7);
-  margin-bottom: 0; /* Remove default margin at the bottom of h2 */
+  margin-bottom: 0;
 }
 
 .selected-person-to-clap {
   color: white;
-  margin-top: 1rem; /* Remove default margin at the top of span */
+  margin-top: 1rem;
 }
 
 .confetti-container {
