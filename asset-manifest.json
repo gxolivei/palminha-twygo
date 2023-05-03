@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-roulette/static/css/main.7e4e45ea.css",
-    "main.js": "/react-roulette/static/js/main.22f3ec84.js",
-    "static/js/787.14cfa183.chunk.js": "/react-roulette/static/js/787.14cfa183.chunk.js",
-    "static/media/sophia.svg": "/react-roulette/static/media/sophia.aa20668aa774d288e11abe47c36b123e.svg",
-    "index.html": "/react-roulette/index.html",
-    "main.7e4e45ea.css.map": "/react-roulette/static/css/main.7e4e45ea.css.map",
-    "main.22f3ec84.js.map": "/react-roulette/static/js/main.22f3ec84.js.map",
-    "787.14cfa183.chunk.js.map": "/react-roulette/static/js/787.14cfa183.chunk.js.map"
+    "main.css": "/palminha-twygo/static/css/main.7e4e45ea.css",
+    "main.js": "/palminha-twygo/static/js/main.c9db9452.js",
+    "static/js/787.14cfa183.chunk.js": "/palminha-twygo/static/js/787.14cfa183.chunk.js",
+    "static/media/sophia.svg": "/palminha-twygo/static/media/sophia.aa20668aa774d288e11abe47c36b123e.svg",
+    "index.html": "/palminha-twygo/index.html",
+    "main.7e4e45ea.css.map": "/palminha-twygo/static/css/main.7e4e45ea.css.map",
+    "main.c9db9452.js.map": "/palminha-twygo/static/js/main.c9db9452.js.map",
+    "787.14cfa183.chunk.js.map": "/palminha-twygo/static/js/787.14cfa183.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7e4e45ea.css",
-    "static/js/main.22f3ec84.js"
+    "static/js/main.c9db9452.js"
   ]
 }
