@@ -2,7 +2,7 @@
   "name": "react-roulette-spa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gxolivei.github.io/react-roulette",
+  "homepage": "https://gxolivei.github.io/palminha-twygo",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
