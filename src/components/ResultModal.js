@@ -26,7 +26,10 @@ const ResultModal = ({ isOpen, onRequestClose, selectedNumber }) => {
   return (
     
     <Modal isOpen={isOpen} onRequestClose={onRequestClose} className="Modal" overlayClassName="Overlay">
-      <h2>Palminha do dia: {selectedNumber}</h2>
+      <h2 className="result-modal-text">
+        Palminha do dia 
+        <span className="selected-person-to-clap">{selectedNumber}</span>
+      </h2>
       <button onClick={onRequestClose} className="result-modal-button">Fechar</button>
       <div className="confetti-container"/>
     </Modal>
