@@ -1,15 +1,17 @@
 # Palminha do Twygo
 
-Palminha do Twygo is a simple web application that allows you to randomly select a member from a predefined list of people, in this case two different Software Engineers/QAs squads. 
+Palminha do Twygo is a simple web application that allows you to randomly select a member from a predefined list of people, in this case two different Software Engineers/QAs squads. The app also allows you to exclude members who are not available.
 
-In our usage, Squad One and Squad Two have different dailies. It can be used to determine who gets the "Palminha do dia" (a virtual clapping) after each's squad daily cerimony.
+In our use, Squad One and Squad Two have different dailies. It can be used to determine who gets the "Palminha do dia" (a virtual clapping) after each's squad daily cerimony.
 
 ## Features
 
 - Randomly selects a member from a list of people.
 - Supports two squads (Squad 1 and Squad 2), with different sets of members.
+- Allows you to exclude members who are not available.
 - Uses a colorful and customizable spinning wheel to display the results.
 - Shows a confetti animation when a winner is selected.
+- Displays the squad members in alphabetical order and highlights selected members.
 
 ## Technologies Used
 
