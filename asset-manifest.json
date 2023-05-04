@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/palminha-twygo/static/css/main.4ad550e7.css",
-    "main.js": "/palminha-twygo/static/js/main.a21df3e0.js",
+    "main.css": "/palminha-twygo/static/css/main.906ef2a7.css",
+    "main.js": "/palminha-twygo/static/js/main.9a086efc.js",
     "static/js/787.14cfa183.chunk.js": "/palminha-twygo/static/js/787.14cfa183.chunk.js",
     "static/media/sophia.svg": "/palminha-twygo/static/media/sophia.aa20668aa774d288e11abe47c36b123e.svg",
     "index.html": "/palminha-twygo/index.html",
-    "main.4ad550e7.css.map": "/palminha-twygo/static/css/main.4ad550e7.css.map",
-    "main.a21df3e0.js.map": "/palminha-twygo/static/js/main.a21df3e0.js.map",
+    "main.906ef2a7.css.map": "/palminha-twygo/static/css/main.906ef2a7.css.map",
+    "main.9a086efc.js.map": "/palminha-twygo/static/js/main.9a086efc.js.map",
     "787.14cfa183.chunk.js.map": "/palminha-twygo/static/js/787.14cfa183.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ad550e7.css",
-    "static/js/main.a21df3e0.js"
+    "static/css/main.906ef2a7.css",
+    "static/js/main.9a086efc.js"
   ]
 }
