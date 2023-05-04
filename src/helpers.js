@@ -38,3 +38,7 @@ export const getInverseColor = (color) => {
 export const filterSelectedMembers = (data, selectedMembers) => {
   return data.filter((member) => !selectedMembers.includes(member.option));
 };
+
+export function sortSquadAlphabetically(squad) {
+  return squad.slice().sort((a, b) => a.option.localeCompare(b.option));
+};
