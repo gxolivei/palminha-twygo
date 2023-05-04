@@ -1,0 +1,15 @@
+.squad-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.squad-member {
+  flex: 0 0 calc(33% - 1rem);
+  margin-bottom: 1rem;
+  text-align: center;
+  background-color: #b683a6;
+  padding: 0.9rem;
+  border-radius: 5px;
+}

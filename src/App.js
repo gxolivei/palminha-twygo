@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import WheelComponent from './components/WheelComponent';
 import BeginModal from './components/BeginModal';
+import SquadList from './components/SquadList';
 
 import './App.css';
 
@@ -60,10 +61,13 @@ function App() {
       <header className="App-header">
         {data.length > 0 && (
           <>
-            <WheelComponent data={data} />
+            <WheelComponent data={data} />           
           </>
         )}
       </header>
+      <div className="squad-container">
+          <SquadList squad={data} />
+      </div>
       <BeginModal
         isOpen={beginModalIsOpen}
         onRequestClose={() => setBeginModalIsOpen(false)}
