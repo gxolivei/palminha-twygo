@@ -41,7 +41,7 @@ Contributions are always welcome! If you would like to contribute to this projec
 
 ## Credits
 
-This project was created by Gabriel Oliveira as a demo project.
+This project was created by [Gabriel Oliveira](https://github.com/gxolivei/) as a demo project.
 
 ## License
 
