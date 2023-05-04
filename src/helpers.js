@@ -34,3 +34,7 @@ export const getInverseColor = (color) => {
 
   return `rgb(${r}, ${g}, ${b})`;
 };
+
+export const filterSelectedMembers = (data, selectedMembers) => {
+  return data.filter((member) => !selectedMembers.includes(member.option));
+};

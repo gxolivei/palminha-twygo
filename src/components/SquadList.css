@@ -13,3 +13,13 @@
   padding: 0.9rem;
   border-radius: 5px;
 }
+
+.squad-member:hover {
+  background-color: #75d87d;
+  cursor: pointer;
+  transform: scale(0.9);
+}
+
+.squad-member.selected {
+  background-color: #db7e52;
+}

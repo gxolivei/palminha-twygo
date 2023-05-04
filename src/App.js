@@ -49,10 +49,21 @@ const squadTwo = [
 function App() {
   const [beginModalIsOpen, setBeginModalIsOpen] = useState(true);
   const [data, setData] = useState([]);
-  
+  const [selectedMembers, setSelectedMembers] = useState([]);
+
   const handleSquadSelect = (squad) => {
     setData(squad === 'Squad 1' ? squadOne : squadTwo);
     setBeginModalIsOpen(false);
+  };
+
+  const toggleSelectedMember = (member) => {
+    setSelectedMembers((prevSelectedMembers) => {
+      if (prevSelectedMembers.includes(member)) {
+        return prevSelectedMembers.filter((m) => m !== member);
+      } else {
+        return [...prevSelectedMembers, member];
+      }
+    });
   };
 
   return (
@@ -61,12 +72,18 @@ function App() {
       <header className="App-header">
         {data.length > 0 && (
           <>
-            <WheelComponent data={data} />           
+            <WheelComponent
+              data={data.filter((member) => !selectedMembers.includes(member.option))}
+            />
           </>
         )}
       </header>
       <div className="squad-container">
-          <SquadList squad={data} />
+        <SquadList
+          squad={data}
+          onToggleMember={toggleSelectedMember}
+          selectedMembers={selectedMembers}
+        />
       </div>
       <BeginModal
         isOpen={beginModalIsOpen}
@@ -75,6 +92,6 @@ function App() {
       />
     </div>
   );
-}  
+}
 
 export default App;
