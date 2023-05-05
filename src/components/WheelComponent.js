@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Wheel } from 'react-custom-roulette';
 import SpinButton from './SpinButton';
 import ResultModal from './ResultModal';
 import pointerImage from '../images/sophia.svg';
 import { generateGradientColors, getInverseColor } from '../helpers';
+import './WheelComponent.css';
 
-const WheelComponent = ({ data }) => {
+const WheelComponent = ({ data, isEmpty = false }) => {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [easterEggTriggered, setEasterEggTriggered] = useState(isEmpty);
+
+  useEffect(() => {
+    setEasterEggTriggered(isEmpty);
+  }, [isEmpty]);
 
   const gradientColors = generateGradientColors(
     { r: 245, g: 245, b: 245 },
@@ -19,7 +25,7 @@ const WheelComponent = ({ data }) => {
   const inverseTextColors = gradientColors.map((color) => getInverseColor(color));
 
   const handleSpinClick = () => {
-    if (!mustSpin) {
+    if (!mustSpin && !isEmpty) {
       const newPrizeNumber = Math.floor(Math.random() * data.length);
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
@@ -40,30 +46,38 @@ const WheelComponent = ({ data }) => {
     style: {
       width: '5.438rem',
       height: '5.438rem',
-      transition: 'transform 0.5s',
-      transform: mustSpin ? 'rotate(10deg)' : 'rotate(0)',
+      transition: 'transform 0.1s',
+      transform: mustSpin ? 'rotate(17deg)' : 'rotate(-17deg)',
     },
   };
 
+
+
   return (
     <>
-      <Wheel
-        mustStartSpinning={mustSpin}
-        prizeNumber={prizeNumber}
-        data={data}
-        disableInitialAnimation={true}
-        backgroundColors={gradientColors}
-        fontSize={14}
-        textColors={inverseTextColors}
-        textDistance={60}
-        onStopSpinning={handleStopSpinning}
-        outerBorderColor={gradientColors}
-        radiusLineWidth={0}
-        perpendicularText={false}
-        spinDuration={0.5}
-        pointerProps={pointerProps}
-      />
-      <SpinButton onClick={handleSpinClick} />
+      {!isEmpty ? (
+        <Wheel
+          mustStartSpinning={mustSpin}
+          prizeNumber={prizeNumber}
+          data={data}
+          disableInitialAnimation={true}
+          backgroundColors={gradientColors}
+          fontSize={14}
+          textColors={inverseTextColors}
+          textDistance={60}
+          onStopSpinning={handleStopSpinning}
+          outerBorderColor={gradientColors}
+          radiusLineWidth={0}
+          perpendicularText={false}
+          spinDuration={0.5}
+          pointerProps={pointerProps}
+        />
+      ) : (
+        <div className="no-members-message">
+          Hmmmmmmmmmmmm 🤔
+        </div>
+      )}
+      <SpinButton onClick={handleSpinClick} easterEggTriggered={easterEggTriggered} />
       <ResultModal isOpen={modalIsOpen} onRequestClose={closeModal} selectedNumber={data[prizeNumber]?.option} />
     </>
   );

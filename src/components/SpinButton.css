@@ -15,9 +15,18 @@ button:hover {
   transform: scale(1.15);
 }
 
+button.easter-egg:hover {
+  background-color: #d34059;
+}
+
 .hand-icon {
   font-size: 1.7rem;
-  animation: clap 1s infinite;
+  animation: clap 1.4s linear infinite;
+}
+
+.hand-icon-easter-egg {
+  font-size: 1.7rem;
+  color: #f5f5f5;
 }
 
 @keyframes clap {

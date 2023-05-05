@@ -1,7 +1,14 @@
-.pointer-image {
+/* .pointer-image {
   transition: transform 0.3s ease;
 }
 
 .pointer-image.rotated {
-  transform: rotate(10deg);
+  transform: rotate(15deg);
+} */
+
+.no-members-message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #db7e52;
+  margin-top: 2rem;
 }
