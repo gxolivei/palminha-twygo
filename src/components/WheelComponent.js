@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Wheel } from 'react-custom-roulette';
 import SpinButton from './SpinButton';
 import ResultModal from './ResultModal';
@@ -10,6 +10,11 @@ const WheelComponent = ({ data, isEmpty = false }) => {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [easterEggTriggered, setEasterEggTriggered] = useState(isEmpty);
+
+  useEffect(() => {
+    setEasterEggTriggered(isEmpty);
+  }, [isEmpty]);
 
   const gradientColors = generateGradientColors(
     { r: 245, g: 245, b: 245 },
@@ -46,6 +51,8 @@ const WheelComponent = ({ data, isEmpty = false }) => {
     },
   };
 
+
+
   return (
     <>
       {!isEmpty ? (
@@ -70,7 +77,7 @@ const WheelComponent = ({ data, isEmpty = false }) => {
           Hmmmmmmmmmmmm 🤔
         </div>
       )}
-      <SpinButton onClick={handleSpinClick} />
+      <SpinButton onClick={handleSpinClick} easterEggTriggered={easterEggTriggered} />
       <ResultModal isOpen={modalIsOpen} onRequestClose={closeModal} selectedNumber={data[prizeNumber]?.option} />
     </>
   );
