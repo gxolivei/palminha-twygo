@@ -4,14 +4,16 @@ Palminha do Twygo is a simple web application that allows you to randomly select
 
 In our use, Squad One and Squad Two have different dailies. It can be used to determine who gets the "Palminha do dia" (a virtual clapping) after each's squad daily cerimony.
 
+You can check the latest deploy [here](https://gxolivei.github.io/palminha-twygo/).
+
 ## Features
 
 - Randomly selects a member from a list of people.
 - Supports two squads (Squad 1 and Squad 2), with different sets of members.
-- Allows you to exclude members who are not available.
+- Displays the squad members in alphabetical order and highlights selected members.
+- Allows you to exclude members who are not available at the time of the daily in order to optimize time and prevent for the need to keep spinning until someone selected is at the daily meeting.
 - Uses a colorful and customizable spinning wheel to display the results.
 - Shows a confetti animation when a winner is selected.
-- Displays the squad members in alphabetical order and highlights selected members.
 
 ## Technologies Used
 
