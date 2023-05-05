@@ -66,6 +66,10 @@ function App() {
     });
   };
 
+  const resetSelectedMembers = () => {
+    setSelectedMembers([]);
+  };
+  
   return (
     <div className="App">
       <h2 className="placeholder-app-name">Palminha do Twygo</h2>
@@ -73,8 +77,14 @@ function App() {
         {data.length > 0 && (
           <>
             <WheelComponent
-              data={data.filter((member) => !selectedMembers.includes(member.option))}
-              isEmpty={data.filter((member) => !selectedMembers.includes(member.option)).length === 0}
+              data={data.filter(
+                (member) => !selectedMembers.includes(member.option)
+              )}
+              isEmpty={
+                data.filter((member) => !selectedMembers.includes(member.option))
+                  .length === 0
+              }
+              onReset={resetSelectedMembers}
             />
           </>
         )}

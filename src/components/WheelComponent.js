@@ -6,7 +6,7 @@ import pointerImage from '../images/sophia.svg';
 import { generateGradientColors, getInverseColor } from '../helpers';
 import './WheelComponent.css';
 
-const WheelComponent = ({ data, isEmpty = false }) => {
+const WheelComponent = ({ data, isEmpty = false, onReset }) => {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -51,8 +51,6 @@ const WheelComponent = ({ data, isEmpty = false }) => {
     },
   };
 
-
-
   return (
     <>
       {!isEmpty ? (
@@ -77,7 +75,7 @@ const WheelComponent = ({ data, isEmpty = false }) => {
           Hmmmmmmmmmmmm 🤔
         </div>
       )}
-      <SpinButton onClick={handleSpinClick} easterEggTriggered={easterEggTriggered} />
+      <SpinButton onClick={handleSpinClick} easterEggTriggered={easterEggTriggered} onReset={onReset} />
       <ResultModal isOpen={modalIsOpen} onRequestClose={closeModal} selectedNumber={data[prizeNumber]?.option} />
     </>
   );
