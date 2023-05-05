@@ -74,6 +74,7 @@ function App() {
           <>
             <WheelComponent
               data={data.filter((member) => !selectedMembers.includes(member.option))}
+              isEmpty={data.filter((member) => !selectedMembers.includes(member.option)).length === 0}
             />
           </>
         )}
