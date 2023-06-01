@@ -1,0 +1,11 @@
+version: "3"
+services:
+  app:
+    build: .
+    container_name: palminha-twygo
+    stdin_open: true
+    tty: true
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/home/app
