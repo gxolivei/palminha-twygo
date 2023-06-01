@@ -3,6 +3,8 @@ import WheelComponent from './components/WheelComponent';
 import BeginModal from './components/BeginModal';
 import SquadList from './components/SquadList';
 
+import { shuffle } from './helpers';
+
 import './App.css';
 
 const squadOne = [
@@ -74,12 +76,13 @@ function App() {
     <div className="App">
       <h2 className="placeholder-app-name">Palminha do Twygo</h2>
       <header className="App-header">
+        {console.log("@fata", data)}
         {data.length > 0 && (
           <>
             <WheelComponent
-              data={data.filter(
+              data={shuffle(shuffle(data.filter(
                 (member) => !selectedMembers.includes(member.option)
-              )}
+              )))}
               isEmpty={
                 data.filter((member) => !selectedMembers.includes(member.option))
                   .length === 0
