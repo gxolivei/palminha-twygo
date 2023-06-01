@@ -3,7 +3,7 @@ import { Wheel } from 'react-custom-roulette';
 import SpinButton from './SpinButton';
 import ResultModal from './ResultModal';
 import pointerImage from '../images/sophia.svg';
-import { generateGradientColors, getInverseColor, shuffle } from '../helpers';
+import { generateGradientColors, getInverseColor } from '../helpers';
 import './WheelComponent.css';
 
 const WheelComponent = ({ data, isEmpty = false, onReset }) => {
