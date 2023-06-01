@@ -42,3 +42,17 @@ export const filterSelectedMembers = (data, selectedMembers) => {
 export function sortSquadAlphabetically(squad) {
   return squad.slice().sort((a, b) => a.option.localeCompare(b.option));
 };
+
+export const shuffle = (array) => {
+  let currentIndex = array.length,  randomIndex;
+  
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }  
+  
+  return array;
+};

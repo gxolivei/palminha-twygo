@@ -3,10 +3,11 @@ import { Wheel } from 'react-custom-roulette';
 import SpinButton from './SpinButton';
 import ResultModal from './ResultModal';
 import pointerImage from '../images/sophia.svg';
-import { generateGradientColors, getInverseColor } from '../helpers';
+import { generateGradientColors, getInverseColor, shuffle } from '../helpers';
 import './WheelComponent.css';
 
 const WheelComponent = ({ data, isEmpty = false, onReset }) => {
+  const shuffleData = (shuffle(shuffle(data)))
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -57,7 +58,7 @@ const WheelComponent = ({ data, isEmpty = false, onReset }) => {
         <Wheel
           mustStartSpinning={mustSpin}
           prizeNumber={prizeNumber}
-          data={data}
+          data={[...shuffleData]}
           disableInitialAnimation={true}
           backgroundColors={gradientColors}
           fontSize={14}
@@ -76,7 +77,7 @@ const WheelComponent = ({ data, isEmpty = false, onReset }) => {
         </div>
       )}
       <SpinButton onClick={handleSpinClick} easterEggTriggered={easterEggTriggered} onReset={onReset} />
-      <ResultModal isOpen={modalIsOpen} onRequestClose={closeModal} selectedNumber={data[prizeNumber]?.option} />
+      <ResultModal isOpen={modalIsOpen} onRequestClose={closeModal} selectedNumber={shuffleData[prizeNumber]?.option} />
     </>
   );
 };
