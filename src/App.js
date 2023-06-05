@@ -21,7 +21,6 @@ const squadOne = [
   { option: 'Danilo M. de Souza' },
   { option: 'Dayan O. de Freitas' },
   { option: 'Gabriel Oliveira' },
-  { option: 'Luís M. S. Amorim' },
 ];
 
 const squadTwo = [
@@ -44,6 +43,7 @@ const squadTwo = [
   { option: 'Milles D. Schroeder' },
   { option: 'Vinicius Coelho' },
   { option: 'Vinicius Lisboa' },
+  { option: 'Luís M. S. Amorim' },
 ];
 
 function App() {
