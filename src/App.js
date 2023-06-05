@@ -23,6 +23,7 @@ const squadOne = [
   { option: 'Danilo M. de Souza' },
   { option: 'Dayan O. de Freitas' },
   { option: 'Gabriel Oliveira' },
+  { option: 'Lucas G. Medeiros' },
 ];
 
 const squadTwo = [
@@ -40,7 +41,6 @@ const squadTwo = [
   { option: 'Adriane Ribeiro' },
   { option: 'Eduardo L. da Silva' },
   { option: 'Felipe S. Hansen' },
-  { option: 'Lucas G. Medeiros' },
   { option: 'Mateus S. Zandonadi' },
   { option: 'Milles D. Schroeder' },
   { option: 'Vinicius Coelho' },
