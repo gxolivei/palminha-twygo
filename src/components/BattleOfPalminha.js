@@ -24,9 +24,7 @@ const BattleOfPalminha = () => {
       <h2>Battle of Palminha</h2>
       <div className="battle-of-palminha-images">
         <img src={image1} alt="Image 1" onClick={() => handleImageClick(image1)} />
-        <img src={image2} alt="Image 2" onClick={() => handleImageClick(image2)} />
         <img src={image3} alt="Image 3" onClick={() => handleImageClick(image3)} />
-        <img src={image4} alt="Image 4" onClick={() => handleImageClick(image4)} />
         <img src={image5} alt="Image 5" onClick={() => handleImageClick(image5)} />
       </div>
       {expandedImage && (
