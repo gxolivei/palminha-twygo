@@ -1,21 +1,19 @@
 {
   "files": {
     "main.css": "/palminha-twygo/static/css/main.25987f93.css",
-    "main.js": "/palminha-twygo/static/js/main.abebe704.js",
+    "main.js": "/palminha-twygo/static/js/main.7c6aebb3.js",
     "static/js/787.14cfa183.chunk.js": "/palminha-twygo/static/js/787.14cfa183.chunk.js",
     "static/media/image5.png": "/palminha-twygo/static/media/image5.b0a747ff54496ee556fa.png",
-    "static/media/image4.jpg": "/palminha-twygo/static/media/image4.61144bf169bb8a77a717.jpg",
-    "static/media/image2.jpg": "/palminha-twygo/static/media/image2.a0bcc1c039defd1e9c54.jpg",
     "static/media/image1.png": "/palminha-twygo/static/media/image1.043e838bf2a733989821.png",
     "static/media/image3.jpg": "/palminha-twygo/static/media/image3.d8ddfbf38e23d62446e5.jpg",
     "static/media/sophia.svg": "/palminha-twygo/static/media/sophia.aa20668aa774d288e11abe47c36b123e.svg",
     "index.html": "/palminha-twygo/index.html",
     "main.25987f93.css.map": "/palminha-twygo/static/css/main.25987f93.css.map",
-    "main.abebe704.js.map": "/palminha-twygo/static/js/main.abebe704.js.map",
+    "main.7c6aebb3.js.map": "/palminha-twygo/static/js/main.7c6aebb3.js.map",
     "787.14cfa183.chunk.js.map": "/palminha-twygo/static/js/787.14cfa183.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.25987f93.css",
-    "static/js/main.abebe704.js"
+    "static/js/main.7c6aebb3.js"
   ]
 }
