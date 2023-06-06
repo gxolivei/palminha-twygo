@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import WheelComponent from './components/WheelComponent';
 import BeginModal from './components/BeginModal';
 import SquadList from './components/SquadList';
+import BattleOfPalminha from './components/BattleOfPalminha';
 
 import { shuffle } from './helpers';
 
@@ -47,6 +48,7 @@ function App() {
   const [beginModalIsOpen, setBeginModalIsOpen] = useState(true);
   const [data, setData] = useState([]);
   const [selectedMembers, setSelectedMembers] = useState([]);
+  const [showBattleOfPalminha, setShowBattleOfPalminha] = useState(false);
 
   const handleSquadSelect = (squad) => {
     setData(squad === 'Squad 1' ? squadOne : squadTwo);
@@ -66,26 +68,40 @@ function App() {
   const resetSelectedMembers = () => {
     setSelectedMembers([]);
   };
-  
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.ctrlKey && event.key === 'i') {
+        setShowBattleOfPalminha(true);
+      }
+      if (event.key === 'Escape') {
+        setShowBattleOfPalminha(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   return (
     <div className="App">
       <h2 className="placeholder-app-name">Palminha do Twygo</h2>
       <header className="App-header">
         {console.log("@fata", data)}
-        {data.length > 0 && (
-          <>
-            <WheelComponent
-              data={shuffle(shuffle(data.filter(
-                (member) => !selectedMembers.includes(member.option)
-              )))}
-              isEmpty={
-                data.filter((member) => !selectedMembers.includes(member.option))
-                  .length === 0
-              }
-              onReset={resetSelectedMembers}
-            />
-          </>
+        {data.length > 0 && !showBattleOfPalminha && (
+          <WheelComponent
+            data={shuffle(shuffle(data.filter(
+              (member) => !selectedMembers.includes(member.option)
+            )))}
+            isEmpty={
+              data.filter((member) => !selectedMembers.includes(member.option))
+                .length === 0
+            }
+            onReset={resetSelectedMembers}
+          />
         )}
+        {showBattleOfPalminha && <BattleOfPalminha />}
       </header>
       <div className="squad-container">
         <SquadList
