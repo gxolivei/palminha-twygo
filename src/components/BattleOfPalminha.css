@@ -1,0 +1,36 @@
+.battle-of-palminha-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  background-image: linear-gradient(135deg, #a4508b 0%, #5f0a87 100%);
+}
+
+.battle-of-palminha-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.battle-of-palminha-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.battle-of-palminha-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease, border-radius 0.3s ease, border 0.3s ease;
+  border: 5px solid transparent;
+}
+
+.battle-of-palminha-images img:hover {
+  transform: scale(1.1);
+  border-radius: 10px;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+}
