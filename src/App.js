@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import WheelComponent from './components/WheelComponent';
-import BeginModal from './components/BeginModal';
-import SquadList from './components/SquadList';
-import BattleOfPalminha from './components/BattleOfPalminha';
+import React, { useState, useEffect } from 'react'
+import WheelComponent from './components/WheelComponent'
+import BeginModal from './components/BeginModal'
+import SquadList from './components/SquadList'
+import BattleOfPalminha from './components/BattleOfPalminha'
 
-import { shuffle } from './helpers';
+import { shuffle } from './helpers'
 
-import './App.css';
+import './App.css'
 
 const squadOne = [
   { option: 'Angelica C. B.' },
@@ -24,7 +24,7 @@ const squadOne = [
   { option: 'Gabriel Oliveira' },
   { option: 'Lucas G. Medeiros' },
   { option: 'Larissa Tolio'},
-];
+]
 
 const squadTwo = [
   { option: 'Angelica C. B.' },
@@ -44,47 +44,47 @@ const squadTwo = [
   { option: 'Vinicius Lisboa' },
   { option: 'Luís M. S. Amorim' },
   { option: 'Larissa Tolio'},
-];
+]
 
 function App() {
-  const [beginModalIsOpen, setBeginModalIsOpen] = useState(true);
-  const [data, setData] = useState([]);
-  const [selectedMembers, setSelectedMembers] = useState([]);
-  const [showBattleOfPalminha, setShowBattleOfPalminha] = useState(false);
+  const [beginModalIsOpen, setBeginModalIsOpen] = useState(true)
+  const [data, setData] = useState([])
+  const [selectedMembers, setSelectedMembers] = useState([])
+  const [showBattleOfPalminha, setShowBattleOfPalminha] = useState(false)
 
   const handleSquadSelect = (squad) => {
-    setData(squad === 'Squad 1' ? squadOne : squadTwo);
-    setBeginModalIsOpen(false);
-  };
+    setData(squad === 'Squad 1' ? squadOne : squadTwo)
+    setBeginModalIsOpen(false)
+  }
 
   const toggleSelectedMember = (member) => {
     setSelectedMembers((prevSelectedMembers) => {
       if (prevSelectedMembers.includes(member)) {
-        return prevSelectedMembers.filter((m) => m !== member);
+        return prevSelectedMembers.filter((m) => m !== member)
       } else {
-        return [...prevSelectedMembers, member];
+        return [...prevSelectedMembers, member]
       }
-    });
-  };
+    })
+  }
 
   const resetSelectedMembers = () => {
-    setSelectedMembers([]);
-  };
+    setSelectedMembers([])
+  }
 
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.ctrlKey && event.key === 'i') {
-        setShowBattleOfPalminha(true);
+        setShowBattleOfPalminha(true)
       }
       if (event.key === 'Escape') {
-        setShowBattleOfPalminha(false);
+        setShowBattleOfPalminha(false)
       }
-    };
-    window.addEventListener('keydown', handleKeyDown);
+    }
+    window.addEventListener('keydown', handleKeyDown)
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
 
   return (
     <div className="App">
@@ -118,7 +118,7 @@ function App() {
         onSelectSquad={handleSquadSelect}
       />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
