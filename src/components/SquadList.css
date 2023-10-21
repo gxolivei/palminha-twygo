@@ -6,7 +6,7 @@
 }
 
 .squad-member {
-  flex: 0 0 calc(33% - 1rem);
+  flex: 0 0 calc(33.333% - 1rem);
   margin-bottom: 1rem;
   text-align: center;
   background-color: #b683a6;
@@ -21,4 +21,22 @@
 
 .squad-member.selected {
   background-color: #db7e52;
+}
+
+@media (max-width: 1024px) {
+  .squad-member {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .squad-list {
+    justify-content: center;
+  }
+
+  .squad-member {
+    flex: 0 0 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
