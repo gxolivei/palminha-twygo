@@ -6,6 +6,7 @@ import BattleOfPalminha from './components/BattleOfPalminha'
 import { shuffle } from './helpers'
 import './App.css'
 import { PeopleActions, SquadActionsMock } from './actions/people'
+import { Squad } from './models/squad'
 
 function App() {
   const [beginModalIsOpen, setBeginModalIsOpen] = useState(true)
@@ -13,12 +14,12 @@ function App() {
   const [selectedMembers, setSelectedMembers] = useState([])
   const [showBattleOfPalminha, setShowBattleOfPalminha] = useState(false)
   
-  const squadOne = useRef([])
-  const squadTwo = useRef([])
+  const squadOne = new Squad({ id: 1, name: 'Squad 1', members: [] })
+  const squadTwo = new Squad({ id: 2, name: 'Squad 2', members: [] })
   const useFirebase = false
 
   const handleSquadSelect = (squad) => {
-    setData(squad === 'Squad 1' ? squadOne.current : squadTwo.current)
+    setData(squad === 'Squad 1' ? squadOne.members : squadTwo.members)
     setBeginModalIsOpen(false)
   }
 
@@ -56,21 +57,20 @@ function App() {
 
 
   const loadSquadAllPeople = async () => {
-    const peoples = await PeopleActions().fetchPeople()
-
     if (useFirebase) {
+      const peoples = await PeopleActions().fetchPeople()
       console.log('[FIREBASE]peoples', peoples)
 
-      squadOne.current = peoples.filter(p => p.squad.includes(1)).map((people) => {
-        return { option: people.Name }
+      peoples.filter(p => p.squad.includes(1)).forEach((people) => {
+        squadOne.addMember({ option: people.Name })
       })
 
-      squadTwo.current = peoples.filter(p => p.squad.includes(2)).map((people) => {
-        return { option: people.Name }
+      peoples.filter(p => p.squad.includes(2)).forEach((people) => {
+        squadTwo.addMember({ option: people.Name })
       })
     }else{
-      squadOne.current = SquadActionsMock().squadOne()
-      squadTwo.current = SquadActionsMock().squadTwo()  
+      SquadActionsMock().squadOne(squadOne)
+      SquadActionsMock().squadTwo(squadTwo)  
     }
   }
 

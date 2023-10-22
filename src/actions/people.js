@@ -2,7 +2,7 @@ import { Firebase } from "../firebase"
 
 
 export const SquadActionsMock = () => {  
-  const squadOne = () => {
+  const squadOne = (Squad) => {
     const squadOne = [
       { option: 'Angelica C. B.' },
       { option: 'Guilherme F.' },
@@ -19,12 +19,17 @@ export const SquadActionsMock = () => {
       { option: 'Lucas G. Medeiros' },
       { option: 'Larissa Tolio'},
     ]
-  
+
+    Squad.clearMembers()
+    squadOne.forEach((member) => {
+      Squad.addMember(member)
+    })
+
     return squadOne
   }
 
 
-const squadTwo = () => {
+const squadTwo = (Squad) => {
   const squadTwo = [
     { option: 'Angelica C. B.' },
     { option: 'Guilherme F.' },
@@ -45,6 +50,11 @@ const squadTwo = () => {
     { option: 'Luís M. S. Amorim' },
     { option: 'Larissa Tolio'},
   ]
+
+  Squad.clearMembers()
+  squadTwo.forEach((member) => {
+    Squad.addMember(member)
+  })
 
   return squadTwo
 }
