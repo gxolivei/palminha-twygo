@@ -61,11 +61,11 @@ function App() {
     if (useFirebase) {
       console.log('[FIREBASE]peoples', peoples)
 
-      squadOne.current = peoples.map((people) => {
+      squadOne.current = peoples.filter(p => p.squad.includes(1)).map((people) => {
         return { option: people.Name }
       })
 
-      squadTwo.current = peoples.map((people) => {
+      squadTwo.current = peoples.filter(p => p.squad.includes(2)).map((people) => {
         return { option: people.Name }
       })
     }else{
