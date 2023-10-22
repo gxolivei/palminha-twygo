@@ -1,59 +1,24 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import WheelComponent from './components/WheelComponent'
 import BeginModal from './components/BeginModal'
 import SquadList from './components/SquadList'
 import BattleOfPalminha from './components/BattleOfPalminha'
-
 import { shuffle } from './helpers'
-
 import './App.css'
-
-const squadOne = [
-  { option: 'Angelica C. B.' },
-  { option: 'Guilherme F.' },
-  { option: 'Matheus F. Mazepa' },
-  { option: 'Eduardo Schmidt' },
-  { option: 'Éverton Gambeta' },
-  { option: 'Grasiela Souza' },
-  { option: 'Jadson dos Santos' },
-  { option: 'Karla Daiany' },
-  { option: 'Loren Helena' },
-  { option: 'Danilo M. de Souza' },
-  { option: 'Dayan O. de Freitas' },
-  { option: 'Gabriel Oliveira' },
-  { option: 'Lucas G. Medeiros' },
-  { option: 'Larissa Tolio'},
-]
-
-const squadTwo = [
-  { option: 'Angelica C. B.' },
-  { option: 'Guilherme F.' },
-  { option: 'Matheus F. Mazepa' },
-  { option: 'Eduardo Schmidt' },
-  { option: 'Éverton Gambeta' },
-  { option: 'Grasiela Souza' },
-  { option: 'Addson A. Coutinho' },
-  { option: 'Jadson dos Santos' },
-  { option: 'Karla Daiany' },
-  { option: 'Loren Helena' },
-  { option: 'Adriane Ribeiro' },
-  { option: 'Felipe S. Hansen' },
-  { option: 'Mateus S. Zandonadi' },
-  { option: 'Milles D. Schroeder' },
-  { option: 'Vinicius Coelho' },
-  { option: 'Vinicius Lisboa' },
-  { option: 'Luís M. S. Amorim' },
-  { option: 'Larissa Tolio'},
-]
+import { PeopleActions, SquadActionsMock } from './actions/people'
 
 function App() {
   const [beginModalIsOpen, setBeginModalIsOpen] = useState(true)
   const [data, setData] = useState([])
   const [selectedMembers, setSelectedMembers] = useState([])
   const [showBattleOfPalminha, setShowBattleOfPalminha] = useState(false)
+  
+  const squadOne = useRef([])
+  const squadTwo = useRef([])
+  const useFirebase = false
 
   const handleSquadSelect = (squad) => {
-    setData(squad === 'Squad 1' ? squadOne : squadTwo)
+    setData(squad === 'Squad 1' ? squadOne.current : squadTwo.current)
     setBeginModalIsOpen(false)
   }
 
@@ -72,6 +37,8 @@ function App() {
   }
 
   useEffect(() => {
+    loadSquadAllPeople()
+
     const handleKeyDown = (event) => {
       if (event.ctrlKey && event.key === 'i') {
         setShowBattleOfPalminha(true)
@@ -80,17 +47,37 @@ function App() {
         setShowBattleOfPalminha(false)
       }
     }
+    
     window.addEventListener('keydown', handleKeyDown)
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
   }, [])
 
+
+  const loadSquadAllPeople = async () => {
+    const peoples = await PeopleActions().fetchPeople()
+
+    if (useFirebase) {
+      console.log('[FIREBASE]peoples', peoples)
+
+      squadOne.current = peoples.map((people) => {
+        return { option: people.Name }
+      })
+
+      squadTwo.current = peoples.map((people) => {
+        return { option: people.Name }
+      })
+    }else{
+      squadOne.current = SquadActionsMock().squadOne()
+      squadTwo.current = SquadActionsMock().squadTwo()  
+    }
+  }
+
   return (
     <div className="App">
       <h2 className="placeholder-app-name">Palminha do Twygo</h2>
       <header className="App-header">
-        {console.log("@fata", data)}
         {data.length > 0 && !showBattleOfPalminha && (
           <WheelComponent
             data={shuffle(shuffle(data.filter(
