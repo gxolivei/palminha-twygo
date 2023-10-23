@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import WheelComponent from './components/WheelComponent'
 import BeginModal from './components/BeginModal'
 import SquadList from './components/SquadList'
@@ -53,7 +53,7 @@ function App() {
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [])
+  })
 
 
   const loadSquadAllPeople = async () => {
