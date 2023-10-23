@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import WheelComponent from './components/WheelComponent'
 import BeginModal from './components/BeginModal'
 import SquadList from './components/SquadList'
@@ -8,7 +8,7 @@ import './App.css'
 import { PeopleActions, SquadActionsMock } from './actions/people'
 import { Squad } from './models/squad'
 
-function App() {
+function App() {  
   const [beginModalIsOpen, setBeginModalIsOpen] = useState(true)
   const [data, setData] = useState([])
   const [selectedMembers, setSelectedMembers] = useState([])
@@ -53,18 +53,19 @@ function App() {
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [])
+  })
 
 
   const loadSquadAllPeople = async () => {
     if (useFirebase) {
       const peoples = await PeopleActions().fetchPeople()
       console.log('[FIREBASE]peoples', peoples)
-
+      squadOne.clearMembers()
       peoples.filter(p => p.squad.includes(1)).forEach((people) => {
         squadOne.addMember({ option: people.Name })
       })
 
+      squadTwo.clearMembers()
       peoples.filter(p => p.squad.includes(2)).forEach((people) => {
         squadTwo.addMember({ option: people.Name })
       })
