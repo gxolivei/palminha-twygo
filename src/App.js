@@ -16,7 +16,7 @@ function App() {
   
   const squadOne = new Squad({ id: 1, name: 'Squad 1', members: [] })
   const squadTwo = new Squad({ id: 2, name: 'Squad 2', members: [] })
-  const useFirebase = true
+  const useFirebase = false
 
   const handleSquadSelect = (squad) => {
     setData(squad === 'Squad 1' ? squadOne.members : squadTwo.members)
