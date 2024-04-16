@@ -84,7 +84,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2 className="placeholder-app-name">Palminha do Twygo</h2>
+      <h2 className="placeholder-app-name">Palminha da Twygo</h2>
       <header className="App-header">
         {data.length > 0 && !showBattleOfPalminha && (
           <WheelComponent
