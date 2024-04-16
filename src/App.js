@@ -23,13 +23,20 @@ function App() {
     setBeginModalIsOpen(false)
   }
 
+  useEffect(() => {
+    const selectedMembers = JSON.parse(localStorage.getItem('selectedMembers'))
+    if (selectedMembers) {
+      setSelectedMembers(selectedMembers)
+    }
+  }, [])
+
   const toggleSelectedMember = (member) => {
     setSelectedMembers((prevSelectedMembers) => {
-      if (prevSelectedMembers.includes(member)) {
-        return prevSelectedMembers.filter((m) => m !== member)
-      } else {
-        return [...prevSelectedMembers, member]
-      }
+      const newSelected = prevSelectedMembers.includes(member)
+        ? prevSelectedMembers.filter((m) => m !== member)
+        : [...prevSelectedMembers, member]
+      localStorage.setItem('selectedMembers', JSON.stringify(newSelected))
+      return newSelected
     })
   }
 
