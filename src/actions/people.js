@@ -4,19 +4,15 @@ import { Firebase } from "../firebase"
 export const SquadActionsMock = () => {  
   const squadOne = (Squad) => {
     const squadOne = [
+      { option: 'Alexandre Kumagae' },
       { option: 'Angelica C. B.' },
-      { option: 'Guilherme F.' },
-      { option: 'Matheus F. Mazepa' },
-      { option: 'Eduardo Schmidt' },
-      { option: 'Éverton Gambeta' },
-      { option: 'Grasiela Souza' },
-      { option: 'Jadson dos Santos' },
-      { option: 'Johnny Santos'},
-      { option: 'Karla Daiany' },
+      { option: 'Ascendino Junior' },
       { option: 'Danilo M. de Souza' },
       { option: 'Dayan O. de Freitas' },
-      { option: 'Lucas G. Medeiros' },
+      { option: 'Eduardo Schmidt' },
+      { option: 'Johnny Santos'},
       { option: 'Larissa Tolio'},
+      { option: 'Lucas G. Medeiros' },
     ]
 
     Squad.clearMembers()
@@ -31,6 +27,7 @@ export const SquadActionsMock = () => {
 const squadTwo = (Squad) => {
   const squadTwo = [
     { option: 'Angelica C. B.' },
+    { option: 'Ascendino Junior' },
     { option: 'Guilherme F.' },
     { option: 'Matheus F. Mazepa' },
     { option: 'Eduardo Schmidt' },
