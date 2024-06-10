@@ -56,6 +56,11 @@
   margin-bottom: 0;
 }
 
+.pharse {
+  font-size: 14px;
+  text-align: center;
+}
+
 .selected-person-to-clap {
   color: white;
   margin-top: 1rem;

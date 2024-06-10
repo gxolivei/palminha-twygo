@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Modal from 'react-modal';
 import Confetti from 'canvas-confetti';
 import './ResultModal.css';
-
+import { CountdownPhrase } from '../models/CountdownPhrase'
 Modal.setAppElement('#root');
 
 const ResultModal = ({ isOpen, onRequestClose, selectedNumber }) => {
@@ -28,14 +28,23 @@ const ResultModal = ({ isOpen, onRequestClose, selectedNumber }) => {
     <Modal isOpen={isOpen} onRequestClose={onRequestClose} className="Modal" overlayClassName="Overlay">
       <h2 className="result-modal-text">
         Palminha do dia 
-        <span className="selected-person-to-clap">
-          {selectedNumber}
-        </span>
       </h2>
+      <DisplayPharse />
+
+      <span className="selected-person-to-clap">
+        {selectedNumber}
+      </span>
+
       <button onClick={onRequestClose} className="result-modal-button">Fechar</button>
       <div className="confetti-container"/>
     </Modal>
   );
 };
+
+
+const DisplayPharse = () => {
+  const countdownPhrase = new CountdownPhrase()
+  return (<span class="pharse">-{countdownPhrase.raffle()}</span>)
+}
 
 export default ResultModal;
