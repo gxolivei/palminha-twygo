@@ -6,13 +6,15 @@ export const SquadActionsMock = () => {
     const squadOne = [
       { option: 'Alexandre Kumagae' },
       { option: 'Angelica C. B.' },
-      { option: 'Ascendino Junior' },
       { option: 'Danilo M. de Souza' },
-      { option: 'Dayan O. de Freitas' },
+      { option: 'Douglas Utzig' },
       { option: 'Eduardo Schmidt' },
+      { option: 'Guilherme F.' },
       { option: 'Johnny Santos'},
+      { option: 'Karla Daiany'},
       { option: 'Larissa Tolio'},
       { option: 'Lucas G. Medeiros' },
+      { option: 'Milles Schroeder' },
     ]
 
     Squad.clearMembers()
