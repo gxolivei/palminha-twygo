@@ -31,6 +31,7 @@ const squadTwo = (Squad) => {
     { option: 'Angelica C. B.' },
     { option: 'Ascendino Junior' },
     { option: 'Guilherme F.' },
+    { option: 'Dayan F.' },
     { option: 'Matheus F. Mazepa' },
     { option: 'Eduardo Schmidt' },
     { option: 'Éverton Gambeta' },
